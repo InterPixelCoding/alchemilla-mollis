@@ -1,0 +1,16 @@
+[
+    {
+        "person": "Jessica and Peter",
+        "generic": true
+    },
+    {
+        "person": "Eamonn",
+        "generic": false,
+        "response": "the World in 80 Trees book!"
+    },
+    {
+        "person": "Tom, Kirstin, Tate and Miles",
+        "generic": false,
+        "response": "the World in 80 Trees book!"
+    }
+]

@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+    font-family: 'Display';
+    src: url("./Arida Bold.otf");
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+
+    background-image: url("./layers/fallback.png");
+    background-size: cover;
+    color: rgb(210,210,210);
+    font-family: 'Montserrat';
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    opacity: 1;
+    background: rgb(12, 18, 11);
+    z-index: 1000;
+    pointer-events: none;
+
+    animation: fade-in 2s .25s ease forwards;
+}
+
+
+h1 {margin-bottom: -1.25rem;}
+h1, h2 {font-family: Display; font-size: 5rem;}
+h2 {font-size: 2.5rem}
+
+.response-container > h2.from {padding: 0 0 1rem 0}
+
+h1, h2, span, button {filter: drop-shadow(0 .25rem .25rem rgba(14, 62, 3, 0.265))}
+
+span {
+    font-size: 170%;
+    font-weight: 600;
+}
+
+.fs-smaller {font-size: 3.5rem}
+
+button {
+    border: none;
+    height: max-content;
+    padding: 0;
+    font-size: 1.125rem;
+    font-family: inherit;
+    background:rgba(131, 205, 115, 0.4);
+    color: white;
+    font-weight: 400;
+    letter-spacing: .04em;
+    z-index: 200;
+    cursor: pointer;
+}
+
+.line-break {
+    height: 1em;
+    width: 100%
+}
+
+.max {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    mix-blend-mode: overlay;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.overlay {
+    background: url(./layers/overlay.png);
+    background-size: contain;
+    background-repeat: repeat;
+}
+
+.response-container {
+    position: fixed;
+    flex-direction: column;
+    background: linear-gradient(200deg, rgba(168, 210, 159, 0.4), rgba(106, 174, 91, 0.652));
+    color: rgb(255, 255, 255);
+    border-radius: .75rem;
+    backdrop-filter: blur(2rem);
+    filter: saturate(.5);
+    min-height: 4rem;
+    max-width: 40rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    text-align: center;
+    font-size: 1rem;
+    overflow: auto;
+
+    box-shadow: inset 0 .75rem .5rem rgba(0, 64, 7, 0.366),
+                      0 .75rem .5rem rgba(0, 64, 7, 0.366)
+    ;
+
+    transition: 500ms ease all;
+}
+
+.response-container > *:not(.overlay) {padding: .75rem 1.125rem;}
+
+.response-container > *:not(button, .overlay) {
+    max-height: 25rem;
+    transition: 500ms ease all;
+}
+
+.response-container.minimised {
+    overflow: hidden;
+    gap: 0; 
+    max-width: 10em;
+    top: 3rem;
+    right: 2.5rem;
+}
+.response-container.minimised > *:not(button, .overlay) {
+    max-height: 0rem;
+    padding: 0;
+    opacity: 0;
+}
+
+@keyframes fade-in {
+    0% {opacity: 1}
+    100% {opacity: 0}
+}
+
+@media (max-width: 900px) {
+    h1 {font-size: 3.5rem;}
+    .response-container {
+        max-height: 90vh;
+    }
+}
+
+@media (max-width: 720px) {
+    .response-container {
+        left: 50%;
+        top: 50%;
+        width: 80vw;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-position: 25% 0%;
+    }
+    .fs-smaller {font-size: 2.5rem;}
+}
+
+@media (max-width: 500px) {
+    .response-container {
+        width: 95vw;
+        border-radius: .5rem;
+    }
+}
+
+
