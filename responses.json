@@ -51,5 +51,10 @@
     {
         "person": "Grandma",
         "generic": true
+    },
+    {
+        "person": "Rozzi",
+        "generic": false,
+        "response": "the Beef Jerky and Japanese Matcha Tea! The Matcha is really nice and feels very green (no other way to describe it!). I'm sure the Beef Jerky will come in handy on my next hike."
     }
 ]
