@@ -68,7 +68,7 @@ const random_strings = [
 ];
 
 const generic_text = `
- generous birthday money! I have used the total amount to buy a refurbished second hand DSLR camera.
+ generous birthday money! The money went towards a refurbished second hand DSLR camera.
  One reason why I have decided to buy this is because i am planning on filming a short film written 
  by two of my friends that requires a better sensor and lens to film in low light conditions
 `
